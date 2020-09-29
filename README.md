@@ -4,7 +4,9 @@ A web application(using React) where user will be shown colleges from north Indi
 ### Hosted at: 
 
 ## Functionality
-`There will be two colleges in a row and in the beginning, we will show 10 colleges to the user and after that once user get scrolled to the last college, it will append the next 10 colleges and so on until the whole json gets parsed.`
+* There will be two colleges in a row and in the beginning
+* we will show 10 colleges to the user and after that once user get scrolled to the last college
+* it will append the next 10 colleges and so on until the whole json gets parsed.
 
 ## Preview
 1. Two colleges in row
