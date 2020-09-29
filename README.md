@@ -1,7 +1,7 @@
 # CollegeDunia Assignment(FrontEnd Task)
 A web application(using React) where user will be shown colleges from north India.
 
-### Hosted at: 
+### Hosted at: https://amanrai24.github.io/CollegeDunia-Assignment/
 
 ## Functionality
 * There will be two colleges in a row and in the beginning
