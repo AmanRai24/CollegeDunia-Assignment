@@ -1,59 +1,52 @@
-import React, { Component } from 'react';
-import Container from "./components/Container"
-import InfiniteScroll from 'react-infinite-scroll-component';
+import React, { Component } from "react";
+import Container from "./components/Container";
+import InfiniteScroll from "react-infinite-scroll-component";
 import colleges from "./assets/data/colleges.json";
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      data:colleges,
-      items:Array.from({length:10}),
-      hasMore:true,
+    this.state = {
+      data: colleges,
+      items: Array.from({ length: 10 }),
+      hasMore: true,
     };
   }
 
-  fetchData=()=>{
-    if(this.state.items.length>=this.state.data.colleges.length){
-      this.setState({hasMore:false});
+  fetchData = () => {
+    if (this.state.items.length >= this.state.data.colleges.length) {
+      this.setState({ hasMore: false });
       return;
     }
 
-    setTimeout(()=>{
+    setTimeout(() => {
       this.setState({
-        items:this.state.items.concat(Array.from({length:10})),
+        items: this.state.items.concat(Array.from({ length: 10 })),
       });
-    },2000)
-  }
+    }, 2000);
+  };
 
-  render(){
-    const{data,items,hasMore}=this.state;
-    const style={
-      color:"red",
-      fontSize:24,
-      textAlign: "center"
-    }
-  return (
-    <div className="App">
-      <span>Colleges in North India</span>
-      <InfiniteScroll
-        dataLength={items.length}
-        next={this.fetchData}
-        hasMore={hasMore}
-        loader={<span style={{textAlign:"center", fontSize:20}}>Please Wait!!Loading</span>}
-        endMessage={
-          <span style={style}>Nothing To Show..</span>
-        }
-      >
-        {items.map((i,index)=>(
-          <>
-            <Container key={index} data={data.colleges[index]} ></Container>
-          </>
-        ))}
-      </InfiniteScroll>
-    </div>
-  );
-}
+  render() {
+    const { data, items, hasMore } = this.state;
+    return (
+      <div className="App">
+        <h2 className="heading">Colleges in North India</h2>
+        <InfiniteScroll
+          dataLength={items.length}
+          next={this.fetchData}
+          hasMore={hasMore}
+          loader={<div className="loader"></div>}
+          endMessage={<p className="end">Nothing To Show...</p>}
+        >
+          {items.map((i, index) => (
+            <>
+              <Container key={index} data={data.colleges[index]}></Container>
+            </>
+          ))}
+        </InfiniteScroll>
+      </div>
+    );
+  }
 }
 
 export default App;

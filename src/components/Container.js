@@ -1,4 +1,5 @@
 import React from "react";
+import "../index.css";
 
 export default function Container(props){
     const{
@@ -23,27 +24,27 @@ export default function Container(props){
     return(
         <>
         <div className="card">
-            <div className="card_Header">
+            <div className="card_header">
                 <div className="header_right">
-                    <div className="header_promoted  d-flex-text">
+                    <div className="header_promoted  flex-text">
                         <span className="promoted_text">
                             {promoted ? "Promoted" : "Not Promoted"}
                         </span>
                     </div>
                     <div className="header_rating">
-                        <span className="rating_text">
+                        <span className="rating_bold">
                             {rating}
-                            <span>/5</span>
+                            <span className="rating_bold1">/5</span>
                         </span>
                         <span className="rating_text">{rating_remarks}</span>
                     </div>
                 </div>
                 <div className="header_bottom">
                     <div className="header_tags">
-                        <div className="tags_best  d-flex-text">
+                        <div className="best  flex-text">
                             <span className="best_text">{tags[0]}</span>
                         </div>
-                        <div className="tags_distance  d-flex-text">
+                        <div className="distance  flex-text">
                             <span className="distance_text">{tags[1]}</span>
                         </div>
                     </div>
@@ -52,6 +53,7 @@ export default function Container(props){
                     </div>
                 </div>
             </div>
+
             <div className="card_body">
                 <div className="body_description">
                     <div className="description_college-name">
@@ -63,20 +65,18 @@ export default function Container(props){
                     </div>
                     <div className="description_location-row">
                         <span className="location">{nearest_place[0]}</span>
-                        <span className="nearest-location">| {nearest_place[1]}</span>
+                        <span className="nearest-location"> | {nearest_place[1]}</span>
                     </div>
                     <div className="description_match-row">
                         <span className="match">93% Match : </span>
                         <span className="distance-from">
                             {famousPlacesArray[0]}&nbsp;
                             <span className="grey-text">
-                                {famousPlacesArray[1]} {famousPlacesArray[2]} &nbsp;
-                                {famousPlacesArray[3]}
+                                {famousPlacesArray[1]} {famousPlacesArray[2]} {famousPlacesArray[3]}
                             </span>
-                            &nbsp;{famousPlacesArray[4]} {famousPlacesArray[5]}
+                            {famousPlacesArray[4]} {famousPlacesArray[5]}&nbsp;
                             <span className="grey-text">
-                                {famousPlacesArray[6]}&nbsp; {famousPlacesArray[7]}&nbsp;
-                                {famousPlacesArray[8]}
+                                {famousPlacesArray[6]} {famousPlacesArray[7]} {famousPlacesArray[8]}
                             </span>
                         </span>
                     </div>
@@ -85,7 +85,7 @@ export default function Container(props){
                         <span className="offers">
                             <span className="flat">{offertextArray[0]} </span>
                         <span>
-                        Rs
+                            Rs
                         <span className="price">
                             {" "}
                             {offertextArray[1]} {offertextArray[2]}
@@ -114,9 +114,8 @@ export default function Container(props){
                 <span className="per-semester">{fees_cycle}</span>
             </div>
             <div className="features">
-                <span className="free">{amenties[0]}</span>
-                <span className="dot">.</span>
-                <span className="wifi">{amenties[1]}</span>
+                <span className="free">{amenties[0]}<span className="dot"> . </span>
+                <span className="wifi">{amenties[1]}</span></span>
             </div>
         </div>
         </div>

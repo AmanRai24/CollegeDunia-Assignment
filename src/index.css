@@ -1,15 +1,55 @@
 body {
   margin: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* loader start */
+.loader {
+  margin: auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid green;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* loader end */
+
+/* end of scrolling  */
+.end{
+  margin: auto;
+  font-size: 35px;
+  font-weight: bolder;
+  color: red;
+}
+
+.heading {
+  text-align: center;
 }
 
 .infinite-scroll-component {
@@ -18,44 +58,46 @@ code {
   overflow: unset !important;
 }
 
+/* card or college details */
 .card {
   width: 47vw;
-  height: 53vh;
+  height: 60vh;
   padding: 2px;
   border-radius: 3.8px;
   box-shadow: 0 0 19px 0 rgba(68, 68, 68, 0.1);
   border: solid 0.2px #444444;
   background-color: #ffffff;
-  margin-top: 25px;
-  margin-right: 8px;
+  margin: 24px 6px;
 }
 
+/* card header tag,promoted,best */
 .card_header {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 60%;
   background: url("./assets/images/college_02.jpg") no-repeat center;
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.71);
-  display: flex;
+  box-shadow: inset 0 0 0 200px rgba(0, 0, 0, 0.71);
   background-size: cover;
-  flex-direction: column;
   justify-content: space-between;
-  /* justify-content: space-around; */
 }
 
 .header_right {
   display: flex;
   flex-direction: column;
-  color: #ffffff;
+  color: #faf6f6;
   text-transform: uppercase;
 }
 
 .header_promoted {
-  width: 152px;
+  width: 140px;
   height: 33px;
-  background-color: #68a7ff;
-  transform: translate(1px, -14px);
+  background-color: #6f9edf;
+  transform: translate(0px, -17px);
   align-self: flex-end;
   font-size: 15px;
+  font-weight: 400;
+  clip-path: polygon(100% 0,100% 100%,0 100%,15% 50%,0 0);
 }
 
 .header_rating {
@@ -63,14 +105,23 @@ code {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 75px;
+  width: 78px;
   height: 53px;
   border-radius: 3.8px;
   background-color: #f5a626;
   align-self: flex-end;
-
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.33;
+}
+
+.rating_bold {
+  font: weight 800;
+  font-size: 23px;
+}
+
+.rating_bold1 {
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .header_bottom {
@@ -87,35 +138,34 @@ code {
   line-height: 1.33;
 }
 
-.tags_best,
-.tags_distance {
-  width: 135px;
+.best,
+.distance {
+  width: 155px;
   height: 34px;
-  border-radius: 16.5px;
+  border-radius: 16px;
   background-color: #ffffff;
   margin-right: 10px;
+  text-transform: capitalize;
 }
 
-.d-flex-text {
+.flex-text {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header_number .number_text {
+.header_number 
+.number_text {
   font-size: 13px;
   line-height: 1.33;
   color: #ffffff;
   margin-right: 10px;
 }
 
-/* -------------- */
+/* College details start */
 .card_body {
   width: 100%;
-  /* height: 143.2px; */
-  /* background-color: cyan; */
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .description_college-name {
@@ -130,30 +180,38 @@ code {
   margin: 0 0 12px 10px;
 }
 
-.body_description .description_college-name span.college-name {
+.body_description 
+.description_college-name 
+span.college-name {
   margin-right: 15px;
-  font-family: "DINPro";
-  font-size: 18.5px;
-  color: #444444;
+  font-size: 17.5px;
+  font-weight: 500;
+  color: black;
 }
 
-.ratings .hollow-star {
+.ratings 
+.hollow-star {
   color: #adadad;
 }
 
-.description_location-row .location {
+.description_location-row 
+.location {
   font-size: 13.5px;
-  color: #444444;
+  font-weight: 400;
+  color: black;
 }
 
-.description_location-row .nearest-location {
-  color: #adadad;
-  margin: 0 5px;
+.description_location-row 
+.nearest-location {
+  font-size: 13.3px;
+  font-weight: 400;
+  color: #ada6a6;
 }
 
 .description_match-row {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 13.5px;
+  width: 110%;
 }
 .match {
   color: #37b396;
@@ -165,17 +223,17 @@ code {
 
 .grey-text {
   color: #adadad;
+  text-align: left;
 }
 
 .description_offer-row {
   padding: 0 0 5px 10px;
   background: #ccf5e7;
   border-radius: 0 10px 10px 0;
-  /* width: 340px; */
 }
 
 .offers {
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: bold;
 }
 .flat {
@@ -185,7 +243,7 @@ code {
 
 .price {
   color: #4bb89e;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 .login-text {
@@ -203,8 +261,6 @@ code {
   font-size: 11px;
   line-height: 1.64;
   color: #444444;
-  font-family: "MyriadPro";
-
   letter-spacing: 2px;
   text-decoration: line-through;
 }
@@ -217,44 +273,48 @@ code {
 }
 
 .original_price {
-  margin-right: 10px;
+  margin-right: 7px;
+  font-weight: 500;
 }
 
 .discount-label {
+  width: 35px;
   background: #dd1c26;
-  font-size: 9px;
+  font-size: 11px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #ffffff;
+  clip-path: polygon(28% 0,100% 0,100% 98%,28% 100%,0 50%);
 }
+
 .discounted-price-row {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .discounted-price {
   font-size: 28.5px;
+  font-weight: bold;
   color: #dd1c26;
 }
 
 .per-semester {
-  font-size: 11px;
+  font-size: 12px;
   color: #444444;
-  font-family: "MyriadPro";
 }
 
 .features {
+  width: 100%;
   display: flex;
-  font-size: 13.5px;
-  font-family: "MyriadPro";
+  font-size: 12.7px;
   color: #37b396;
   font-weight: bold;
   justify-content: space-evenly;
   align-items: center;
 }
 
-
+/* college details end */
