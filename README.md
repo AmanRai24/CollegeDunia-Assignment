@@ -8,6 +8,23 @@ A web application(using React) where user will be shown colleges from north Indi
 
 ## Preview
 
+## Folder Structure
+
+├── public
+        ├── index.html
+    ├── src
+        ├── Assets
+            ├── (contain all Data(JSON File) and Images)
+        ├── Component
+            ├── (contains all react component used in website)
+    ├── App.js
+    ├── index.js
+    ├── index.css(Contain all styling of components as well as App.js)
+    ├── package.json
+    ├── package-lock.json
+    ├── .gitignore
+
+
 ## How to USE & RUN
 1. Clone the project or download the zip folder.
 2. Go to the folder using Command Prompt.
