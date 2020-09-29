@@ -10,12 +10,12 @@ A web application(using React) where user will be shown colleges from north Indi
 
 ## Folder Structure
 
-├── public
+    ├── public
         ├── index.html
     ├── src
         ├── Assets
             ├── (contain all Data(JSON File) and Images)
-        ├── Component
+        ├── Components
             ├── (contains all react component used in website)
     ├── App.js
     ├── index.js
