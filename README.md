@@ -8,6 +8,8 @@ A web application(using React) where user will be shown colleges from north Indi
 
 ## Preview
 
+![Preview](/src/assets/images/preview1.JPG)
+
 ## Folder Structure
 
     ├── public
